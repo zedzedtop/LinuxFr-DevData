@@ -7,11 +7,11 @@ Use
 -----
 
  - Go to LinuxFr-DevData folder : cd /home/linuxfr/LinuxFr-DevData/
- - Update script from repository to load last database
+ - Update script from repository to load last database : git cehckout
  - Run script as root : ./linuxfr_install.sh
 
 Whitout parameters, script use official LinuxFr repository : https://github.com/nono/linuxfr.org/
-You can specify your own repository, for  exemple : https://github.com/mypseudo/linuxfr.org
+You can specify your own repository, for  exemple : ./linuxfr_install.sh https://github.com/mypseudo/linuxfr.org
 
 
 
