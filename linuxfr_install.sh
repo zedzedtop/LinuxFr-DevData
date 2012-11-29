@@ -76,11 +76,6 @@ cp $site_path/config/secret.yml{.sample,}
 chown linuxfr:linuxfr $site_path/config/secret.yml
 chown linuxfr:linuxfr $site_path/config/database.yml
 
-#Mise à jour du fichier unicorn.rb
-mv $site_path/config/unicorn.rb $site_path/config/unicorn.rb.old
-sed -e 's/\(Rails.cache.instance_variable_get\)/# \1/' $site_path/config/unicorn.rb.old > $site_path/config/unicorn.rb
-rm $site_path/config/unicorn.rb.old
-
 #Mise à jour du fichier development.rb
 mv $site_path/config/environments/development.rb $site_path/config/environments/development.rb.old
 sed "s/IMG_DOMAIN = 'dlfp.lo'/IMG_DOMAIN = \`\/sbin\/ifconfig | sed -n '\/dr:\/{;s\/.*dr:\/\/;s\/ .*\/\/;p;}' | grep -v ^127\`.strip\!/" $site_path/config/environments/development.rb.old > $site_path/config/environments/development.rb
